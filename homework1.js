@@ -1,45 +1,28 @@
-1
+1.....
 
 let number
-if(number%2 === 0){
-    console.log("even")
-}else{
-    console.log("odd")
-    }
+    if(number%2 === 0){
+        console.log("even")
+    }else{
+        console.log("odd")
+        }
 
 
-2 - first versia
+2 ...... 
+let number= +prompt(), z=number, y=1
+    if(number>10 && number%10 !== 0){
+        while (z > 0)  {
+              (y=y*10) 
+               z=(z-z%10)/10 }
+        console.log((y/10)*(number%10)+(number-number%10)/10)}
+    else if(number%10 === number || number%10 === 0 ){console.log(number)}
 
-let number
-if(number<10 && number>0){
-console.log(number)
-}
-else if (number%10===0 && number>0){
-    console.log(number)
-}else if(number%10!==0 && number<1000 && number>0){
-    console.log(100*(number%10) + ((number-number%10)/10))
-}else if(number%10!==0 && number<10000 && number>0){
-    console.log(1000*(number%10) + ((number-number%10)/10))
-}
-
-2 - second versia 
-
-let number
-if(number<10 && number>0){
-console.log(number)
-}
-else if (number%10===0 && number>0){
-    console.log(number)
-}else if(number%10!==0 && number>0){
-    console.log(number%10 +''+ ((number-number%10)/10))
-}
-
-3
+3 .......
 
 let number, number1,number2,number3,number4
 console.log("the average of this number is equal " + (number+number1+number2+number3+number4)/5 )
 
-4
+4 .....
 
 let number,number1,number2
 if(number > number1 && number > number2 && number1>number2){
