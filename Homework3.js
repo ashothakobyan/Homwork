@@ -3,12 +3,12 @@
 function progresia(n1,n2,step){
     let out = []
     if(n1<=n2){
-        for(let i = step;n1<=n2;n1+=step){
+        for(let ;n1<=n2;n1+=step){
             out.push(n1)
         }
          return out
     }else{
-        return "firs number must be more then second"
+        return "first number must be more then second"
     }    
    
 }
