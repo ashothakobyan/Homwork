@@ -3,17 +3,28 @@
 function progresia(n1,n2,step){
     let out = []
     if(n1<=n2){
-        for(let ;n1<=n2;n1+=step){
+        for(;n1<=n2;n1+=step){
             out.push(n1)
         }
          return out
     }else{
         return "first number must be more then second"
     }    
-   
 }
 
-2
+2.first versia
+
+function maxElementInArr(arr){
+    let maxElement = arr[0]
+    for(let i = 0;i<arr.length;i++){
+        if(arr[i] > maxElement){
+            maxElement = arr[i]
+        }           
+    }
+    return maxElement
+}
+
+2.second versia
 
 function maxElementInArr(arr){
     for(let i = 0;i<arr.length;i++){
@@ -33,21 +44,19 @@ function maxElementInArr(arr){
 3
 
 function reverseArr(arr){
-    let i = 0 
-    for(;i<arr.length;i++){
-    }
-    for(let j = 0;j<i;j++){
+    let v = arr.length
+    for(let j = 0;j<v;j++){
         arr.push(arr[j])
     }
-    let v=2*i-1
-    for(let j = 0;j<=i;j++,v--){
+    v=arr.length-1
+    for(let j = 0;j<=arr.length/2;j++,v--){
         arr[j] = arr[v]
     }
-    for(let j=0;j<i;j++){
+    for(let j=0;j<arr.length;j++){
     arr.pop()
     }    
     return arr
-
+}
 
     4
 
@@ -60,33 +69,53 @@ function reverseArr(arr){
         return arr2
     }
 
-    5
+    5.first versia
+
+function out(arr,number){
+    let defolt = false
+    let i = 0
+    for(;i<arr.length;i++){
+        if(arr[i] === number){
+            defolt = true
+            break
+        }
+    }
+    if(defolt === false){
+        arr.push(number)
+        return arr   
+    }else{
+        for(let j = i;j<=i;j++){
+            arr[j] = arr[j+1]
+        }
+        arr.pop()
+        }
+        return arr         
+}
+
+5.second versia
 
     function out(arr,number){
-        let defolt = false
-        let i = 0
-        for(;i<arr.length;i++){
-            if(arr[i] === number){
-                defolt = true
-                break
-            }
+    let defolt = false
+    let i = 0
+    for(;i<arr.length;i++){
+        if(arr[i] === number){
+            defolt = true
+            break
         }
-        if(defolt === false){
-            arr.push(number)
-            return arr   
-        }else{
-         for(let j = 0;j<=i;j++){
+    }
+    if(defolt === false){
+        arr.push(number)
+        return arr   
+    }else{
+        for(let j = 0;j<=i;j++){
         arr.push(arr[0])
         arr.shift()
         }
         arr.pop()
-    
-        let h = 0
-        for(;h<arr.length;h++){}
-        let h1=h
-        for(;h1-i<h;h--){
-            arr.unshift(arr[h1-1])
+        for(let j=arr.length,j1=j;j1-i<j;j--){
+            arr.unshift(arr[j1-1])
             arr.pop()
-        }       
         }
+        return arr       
     }
+}
