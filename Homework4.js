@@ -13,7 +13,7 @@ function separateNumbersInOddAndEven(arr){
     return [arrEven,arrOdd]
 }
 
-2.
+2. first versia
 
 function inListCorectAnagrama(word,arr){
     let arr2 = []
@@ -37,6 +37,38 @@ function inListCorectAnagrama(word,arr){
     }
     return arr2
 }
+
+2.second versia
+
+function inListCorectAnagrama(word,arr){
+    let arr2 = []
+    for(let i = 0;i<arr.length;i++){
+        let numberOfCoinsidenc = 0
+            if(word.length === arr[i].length){
+                let str = arr[i]
+                let str2 = ""
+                for(let h = 0;h<word.length;h++){
+                    for(let g = 0;g < str.length;g++){
+                        if(word[h] === str[g]){
+                            numberOfCoinsidenc+=1
+                            for(let j = 0;j<str.length;j++){
+                                if(word[h] !== str[j]){
+                                    str2 += str[j]
+                                }
+                            }
+                            str = str2
+                            break
+                        }
+                    }
+                }
+                 if(numberOfCoinsidenc === word.length){
+                         arr2.push(arr[i])
+                }
+            }
+    }
+    return arr2
+}
+
 
 3.
 
@@ -66,11 +98,25 @@ function remuveStringFromeLongString(longString,string){
     return arr
 }
 
-5.
+5.first versia
 
 function changeSymbol(str,s1,s2){
     while(str.indexOf(s1) !== -1){
         str = str.substring(0,str.indexOf(s1)) + s2 + str.substring(str.indexOf(s1) + 1,)
     }
     return str
+}
+
+5.second versia
+
+function changeSymbol(str,s1,s2){
+    let str2 = ""
+    for(let i = 0;i<str.length;i++){
+        if(str[i] !== s1){
+            str2 += str[i]
+        }else{
+            str2 += s2
+        }
+    }
+    return str2
 }
