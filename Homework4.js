@@ -70,9 +70,28 @@ function inListCorectAnagrama(word,arr){
 }
 
 
-3.
+3.first versia
 
-function remuveStringFromeLongString(longString,string){
+function removeStringFromeText(text,str){
+    let text2 =  ""
+    for(let i = 0;i<text.length;i++){
+        if(text[i] === str[0]){
+            let j = 0
+            while(j<str.length && text[i + j] === str[j]){
+                j+=1
+            }
+            if(j === str.length){
+                i += j
+            }
+        }
+            text2 += text[i]
+    }
+    return text2
+}
+
+3.second versia
+
+function removeStringFromeLongString(longString,string){
     while(longString.indexOf(string) !== -1){
     longString = longString.substring(0,longString.indexOf(string)) +
     longString.substring(longString.indexOf(string) + string.length,)
