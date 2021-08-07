@@ -65,7 +65,7 @@ function findeMinimalPositiveElement(arr){
 //5. Given an array of numbers which is almost sorted in ascending order.  Find the index where sorting
 //order is violated.
 
-function FindTheIndexWhereSortingOrderIsViolated(arr){
+function findTheIndexWhereSortingOrderIsViolated(arr){
     for(let i = 0;i<arr.length-1;i++){
         if(arr[i] > arr[i+1]){
             return i+1
