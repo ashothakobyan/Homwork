@@ -36,11 +36,12 @@ function evanNumbersBetwinArgumentsWhichAllDegitesAreEvan(n1,n2){
 
 //3.Write a recursive function to determine whether all digits of the number are odd or not.
 
-function ifAllDigiteOfNumberAreOdd(number){
-    if(String(number).length === 1 && number %2 !==0){
+function isAllDigiteOfNumberAreOdd(number){
+    let strNumber = String(number)
+    if(strNumber.length === 1 && number %2 !==0){
         return true
-    }else if(String(number)[0] %2 !== 0){
-        return f(+String(number).substring(1))
+    }else if(strNumber[0] %2 !== 0){
+        return isAllDigiteOfNumberAreOdd(+strNumber.substring(1))
     }else{
         return false
     }
@@ -55,10 +56,10 @@ function findeMinimalPositiveElement(arr){
         return -1
     }else if(arr[0] < arr[1] && arr[0] >= 0 || arr[1] < 0 || arr[0] === arr[1] || arr[0] < 0 && arr[1] < 0){
         arr.splice(1,1)
-        return f(arr)
+        return findeMinimalPositiveElement(arr)
     }else{
         arr.splice(0,1)
-        return f(arr)
+        return findeMinimalPositiveElement(arr)
     }
 }
 
