@@ -65,24 +65,19 @@ function invert(obj){
 //5. Create a function that builds a tree like object given an array with object which contains
 //parent and id properties.
 
-function tree(arr){
+function tree(arr,id = 0){
     let result = {}
-    for(let j = 1;j<arr.length;j++){
-        if(arr[0].id === arr[j].parent){
-            if(!result[arr[0].id]){
-                result[arr[0].id] = {}
-            }
-            result[arr[0].id][arr[j].id] = {}      
-        }
-    }
-    for(let key in result){
-        for(let key1 in result[key]){
-            for(let i = 0;i<arr.length;i++){
-                if(key1 === String(arr[i].parent)){
-                    result[key][key1][arr[i].id] = tree(arr.slice(i))
+    let minParents = arr.filter(el => el.parent === id)
+        for(let i = 0;i< minParents.length;i++){
+            result[minParents[i].id] = {}
+            for(let j = 0;j<arr.length;j++){
+                if(minParents[i].id === arr[j].id){
+                    result[minParents[i].id] = tree(arr,arr[j].id)    
                 }
             }    
-        }   
+        }
+    if(id === 0){
+        return {0:result}
     }
     return result
 }
